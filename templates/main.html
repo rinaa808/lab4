@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {background-color: #1a4876;
+            width: 100%;
+            height: 750px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            margin: 0;}
+      h1 {font-weight: 800;
+             color: white;}
+      p {text-align: center;
+          border: 2px dashed white;}
+      h3   {border: 2px double black;
+            color: white;}
+
+    </style>
+    <title>Calculator</title>
+  </head>
+
+  <body>
+    <section class="calculator">
+      <h1> Welcome to Calculator! <3 </h1>
+
+      <form action="/calculate" method="POST">
+        <label for="one">First Number: </label>
+        <input type="number" placeholder="first number" name="first_number" />
+
+        <label for="two">Second Number</label>
+        <input type="number" placeholder="second number" name="second_number" />
+
+        <label for="operation">Operation</label>
+        <select name="operation">
+          <option value="add">Add (+)</option>
+          <option value="subtract">Subtract (-)</option>
+          <option value="multiply">Multiply (*)</option>
+          <option value="divide">Divide (/)</option>
+        </select>
+
+        <input type="submit" value="--> Calculate <--" id="calc_button" class="button" />
+
+        <h3>The result: {{ result }}</h3>
+
+        <p>
+          Latest operations:
+          {{ operations }}
+        </p>
+
+      </form>
+      <form action="/" method="GET">
+        <input type="submit" value="-- Delete latest operations --" id="del_button" class="button" />
+      </form>
+    </section>
+  </body>
+</html>

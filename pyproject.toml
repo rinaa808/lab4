@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "lab4"
+version = "0.1.0"
+description = "LR4 MRPO"
+authors = ["Shtojko Ekaterina <kyzuuer@mail.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+flask = "2.3.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
