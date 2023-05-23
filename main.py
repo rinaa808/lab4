@@ -33,9 +33,16 @@ def calculate():
         return render_template("main.html", result=result, operations=list_of_operations)
 
     elif operation == "divide":
-        result = float(number_one) / float(number_two)
-        list_of_operations.append('{0} / {1} = {2}'.format(number_one, number_two, result))
-        return render_template("main.html", result=result, operations=list_of_operations)
+
+        try:
+            result = float(number_one) / float(number_two)
+            list_of_operations.append('{0} / {1} = {2}'.format(number_one, number_two, result))
+            return render_template("main.html", result=result, operations=list_of_operations)
+
+        except ZeroDivisionError:
+            result = "You tried to divide by zero !"
+            list_of_operations.append('{0} / {1} - ! Zero Division Error !'.format(number_one, number_two))
+            return render_template("main.html", result=result, operations=list_of_operations)
 
     else:
         return render_template("main.html")
